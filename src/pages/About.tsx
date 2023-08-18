@@ -2,12 +2,13 @@ import React, { FC, useEffect, Suspense, useState } from 'react';
 import IPage from '../interfaces/page';
 import '../components/styles/blinker.css';
 import '../components/styles/about.css';
+import '../components/styles/darkMode.css';
 import { Route } from 'react-router-dom';
-import { Canvas } from '@react-three/fiber';
-import Sphere from '../components/three/Sphere';
-import GhBox from '../components/three/GhBox';
-import EmailBox from '../components/three/EmailBox';
-import LinkedInBox from '../components/three/LinkedInBox';
+// import { Canvas } from '@react-three/fiber';
+// import Sphere from '../components/three/Sphere';
+// import GhBox from '../components/three/GhBox';
+// import EmailBox from '../components/three/EmailBox';
+// import LinkedInBox from '../components/three/LinkedInBox';
 
 const HomePage: FC<IPage> = ({name, globalTheme}) => {
   const githubIcon = () => {
@@ -52,7 +53,7 @@ const HomePage: FC<IPage> = ({name, globalTheme}) => {
         <Sphere />
       </Canvas> */}
       <div className="flex flex-row justify-center cursor-pointer home-contact-icons">
-        <Canvas onClick={()=> window.open("https://github.com/evelandy", "_blank")}>
+        {/* <Canvas onClick={()=> window.open("https://github.com/evelandy", "_blank")}>
           <Suspense fallback={null}>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
@@ -72,10 +73,10 @@ const HomePage: FC<IPage> = ({name, globalTheme}) => {
             <pointLight position={[10, 10, 10]} />
             <LinkedInBox />
           </Suspense>
-        </Canvas>
-        {/* <span onClick={()=> window.open("https://github.com/evelandy", "_blank")} className={'mx-8 mt-8 transform hover:scale-110'}>{githubIcon()}</span> */}
-        {/* <span onClick={()=> window.open("mailto:william.griffin@wrgcv.com?subject=Contact from portfolio", "_blank")} className={'mx-9 mt-7 transform hover:scale-110'}>{emailIcon()}</span> */}
-        {/* <span onClick={()=> window.open("https://www.linkedin.com/in/william-griffin-4a4392b9/", "_blank")} className={'mx-8 mt-7 transform hover:scale-110'}>{linkedinIcon()}</span> */}
+        </Canvas> */}
+        <span onClick={()=> window.open("https://github.com/evelandy", "_blank")} className={'mx-8 mt-8 transform hover:scale-110 social-link'}>{githubIcon()}</span>
+        <span onClick={()=> window.open("mailto:william.griffin@wrgcv.com?subject=Contact from portfolio", "_blank")} className={'mx-9 mt-7 transform hover:scale-110 social-link'}>{emailIcon()}</span>
+        <span onClick={()=> window.open("https://www.linkedin.com/in/william-griffin-4a4392b9/", "_blank")} className={'mx-8 mt-7 transform hover:scale-110 social-link'}>{linkedinIcon()}</span>
       </div>
     </div>
   );

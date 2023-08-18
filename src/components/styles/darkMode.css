@@ -10,6 +10,7 @@
     --image-opacity: .45;
     --image-box-shadow: 2px 0px 10px -4px #555050;
     --mix-blend-mode: darken;
+    --fill: #363434;
 }
 
 [data-theme="dark"] {
@@ -24,6 +25,7 @@
     --image-opacity: .65;
     --image-box-shadow: 2px 0px 10px -4px #4a4444;
     --mix-blend-mode: lighten;
+    --fill: #eeeeee;
 }
 
 body {
@@ -101,6 +103,10 @@ input:checked + .slider {
 
 .slider.slider.round::before {
     border-radius: 50%;
+}
+
+.social-link {
+    fill: var(--fill);
 }
 
 /* contact */
