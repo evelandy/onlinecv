@@ -51,6 +51,15 @@ const App = () => {
     storedTheme === 'dark' ? setDark() : setLight();
   }, [storedTheme])
 
+  // sets default theme
+  useEffect(() => {
+    if (defaultDark) {
+      setDark();
+    } else {
+      setLight();
+    }
+  }, []);
+
   return (
     <div className={'w-9/12 mx-auto appContainer'}>
       <BrowserRouter>
@@ -75,24 +84,6 @@ const App = () => {
           })}
         </Switch>
         <span className=''>{themeToggler()}</span>
-        {/* <div className="toggle-theme-wrapper mt-14 mb-16">
-          <span>☀️</span>
-          <label className="toggle-theme" htmlFor="checkbox">
-            <input
-              type="checkbox"
-              id="checkbox"
-              onChange={toggleTheme}
-              defaultChecked={defaultDark}
-            />
-            <div className="slider round"></div>
-          </label>
-          <span>🌒</span>
-        </div> */}
-        {/* <button onClick={() => {
-              localStorage.getItem("theme") === "dark" ? setLight() : setDark();
-          }} className='border-2 rounded p-2'>
-            Change Mode
-        </button> */}
       </BrowserRouter>
     </div>
   );
