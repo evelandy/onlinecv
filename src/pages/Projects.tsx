@@ -15,7 +15,7 @@ const Portfolio = () => {
                 <li className="featured-card">
 
                   <div className="project-image">
-                    <a target="_blank" href={projects[i].links?.reduce((t: string, c: string) => { return c; })} >
+                    <a target="_blank" rel="noreferrer" href={projects[i].links?.reduce((t: string, c: string) => { return c; })} >
                       <img src={projects[i].image} alt={`${projects[i].title} project`} />
                     </a>
                   </div>

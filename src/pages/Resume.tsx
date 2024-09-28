@@ -33,7 +33,7 @@ const Resume: FC<any> = () => {
     return (
         <div id='resume'>
             {/* <button onClick={getResume}>Download PDF</button> */}
-            {pdf && <iframe src={pdf} width="100%" height="600px" />}
+            {pdf && <iframe title='Resume' src={pdf} width="100%" height="600px" />}
         </div>
     );
 }

@@ -12,7 +12,7 @@ export interface ISideNavProps {}
 
 const SideNav = ({selectedCompany}:any) => {
   // const [active, setActive] = useState<boolean>(true);
-  const [selected, setSelected] = useState<string>('Halliburton');
+  const [selected, setSelected] = useState<string>('AscendSC');
   useEffect(() => {
     handleActive()
   }, [])
@@ -29,13 +29,23 @@ const SideNav = ({selectedCompany}:any) => {
   return (
     <div className={'flex flex-row mt-24'}>
       <ul className={'flex flex-col text-left sideNav text-lg lg:mr-24 lg:text-2xl'}>
-        <li onClick={(e) => setSelected((e.target as Element).innerHTML)} className={'active tracking-wider hover:bg-red-alert hover:text-white-primary font-semibold'}>Halliburton</li>
+        <li onClick={(e) => setSelected((e.target as Element).innerHTML)} className={'active tracking-wider hover:bg-red-alert hover:text-white-primary font-semibold'}>AscendSC</li>
         <li onClick={(e) => setSelected((e.target as Element).innerHTML)} className={'tracking-wider hover:bg-red-alert hover:text-white-primary font-semibold'}>Gretrix</li>
+        <li onClick={(e) => setSelected((e.target as Element).innerHTML)} className={'tracking-wider hover:bg-red-alert hover:text-white-primary font-semibold'}>Halliburton</li>
         <li onClick={(e) => setSelected((e.target as Element).innerHTML)} className={'tracking-wider hover:bg-red-alert hover:text-white-primary font-semibold'}>Look Far Labs</li>
         {/* <li onClick={(e) => setSelected((e.target as Element).innerHTML)} className={'tracking-wider hover:bg-red-alert hover:text-white-primary font-semibold'}>GrDev</li> */}
         <li onClick={(e) => setSelected((e.target as Element).innerHTML)} className={'tracking-wider hover:bg-red-alert hover:text-white-primary font-semibold'}>PRT-Solutions</li>
         <li onClick={(e) => setSelected((e.target as Element).innerHTML)} className={'tracking-wider hover:bg-red-alert hover:text-white-primary font-semibold'}>Amity Social</li>
       </ul>
+      <ul className={`ml-8 ${selected === 'AscendSC' ? 'inline' : 'hidden'} lg:text-lg`}>
+      <li><h3 className={'font-bold text-xl mr-4 lg:text-2xl'}>Full-Stack Software Developer <span className={'text-red-alert'}>@ AscendSC</span></h3></li>
+      <li><p className={'text-sm text-left my-2 font-medium tracking-wider ml-3'}>September 2023 - Current</p></li>
+      <ul className={'text-left ml-5 tracking-wider text-md description'}>
+        <li className={''}>Created a mill packing list upload feature for the web application, supporting a mill-agnostic data assimilation system that improved data integrity, reduced manual handling, and accelerated decision-making processes.</li>
+        <li><p>Developed a new asset upload form for the web application, enabling users to upload .xls, .xlsx, and .csv files, which significantly improved data ingestion processes and contributed to enhanced supply chain efficiency.</p></li>
+        <li><p>Implemented a bulk deletion feature for the mobile app's "task landing page," streamlining asset management and improving user experience for field operators.</p></li>
+      </ul>
+    </ul>
     <ul className={`ml-8 ${selected === 'Halliburton' ? 'inline' : 'hidden'} lg:text-lg`}>
       <li><h3 className={'font-bold text-xl mr-4 lg:text-2xl'}>Application Developer <span className={'text-red-alert'}>@ Halliburton</span></h3></li>
       <li><p className={'text-sm text-left my-2 font-medium tracking-wider ml-3'}>April 2022 - October 2022</p></li>
@@ -47,7 +57,7 @@ const SideNav = ({selectedCompany}:any) => {
     </ul>
     <ul className={`ml-8 ${selected === 'Gretrix' ? 'inline' : 'hidden'} lg:text-lg`}>
       <li><h3 className={'font-bold text-xl mr-4 lg:text-2xl'}>Full Stack Web Developer <span className={'text-red-alert'}>@ Gretrix</span></h3></li>
-      <li><p className={'text-sm text-left my-2 font-medium tracking-wider ml-3'}>June 2021 - May 2022 | September 2022 - Current</p></li>
+      <li><p className={'text-sm text-left my-2 font-medium tracking-wider ml-3'}>June 2021 - May 2022 | September 2022 - September 2023</p></li>
       <ul className={'text-left ml-5 tracking-wider text-md description'}>
         <li className={''}>Worked closely with multiple clients to solve advanced issues regarding data analytics, web development and other software related issues.</li>
         <li><p>Created and Utilized custom A/B tests through Google Optimize I was able to help our client convert an extra 1% annual revenue.</p></li>

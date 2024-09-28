@@ -111,8 +111,9 @@ const ContactPage: FC<IContact & RouteComponentProps<any>> = () => {
           height={"100%"}
           title={"map"}
           className={"contact-map mb-14 rounded"}
-          src={"https://www.google.com/maps/embed/v1/place?q=6817+East+Bayou+Dr.+&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"}
+          src={"https://www.google.com/maps/embed/v1/place?q=Granite+Gate+Ln.+&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"}
         />
+        <span className="vert-line"></span>
         <div className={'contact-container flex flex-col space-between mb-24'}>
           <form className={'contact-form flex flex-col md:ml-auto md:mr-auto sm:w-full'} encType="multipart/form-data">
             <label className={'flex flex-col text-white text-lg'} htmlFor="Name">Name

@@ -20,7 +20,13 @@ form label {
 }
 
 .contact-map {
-    margin-top: 1.5em;
+    margin-top: 1.2em;
+}
+
+.vert-line {
+    border-left: 4px solid var(--font-color);
+    height: 50vh;
+    margin-top: 4rem;
 }
 
 @media screen and (max-width: 767px) {

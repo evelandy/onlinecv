@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { BitBucketLogo, XMLLogo, GithubLogo, AzureLogo, OxideLogo, ApacheLogo, AWSLogo, backArrowIcon, BootStrapLogo, CSSLogo, FlaskLogo, GCPLogo, GitLogo, HTMLLogo, JavaScriptLogo, MySQLLogo, NGINXLogo, PythonLogo, ReactLogo, ReactNativeLogo, SQLiteLogo, TailwindLogo, TypeScriptLogo, JALogo, WPLogo, ShopifyLogo, AngularLogo, GALogo, GTMLogo, LaravelLogo, PHPLogo, XCodeLogo, OptimizeLogo, MagentoLogo, ZapierLogo, ProductiveLogo, FormikLogo, SQLAlchemyLogo, RestAPILogo } from '../svg';
+import { BitBucketLogo, XMLLogo, GithubLogo, AzureLogo, OxideLogo, ApacheLogo, AWSLogo, backArrowIcon, BootStrapLogo, CSSLogo, FlaskLogo, GCPLogo, GitLogo, HTMLLogo, JavaScriptLogo, MySQLLogo, NGINXLogo, PythonLogo, ReactLogo, ReactNativeLogo, SQLiteLogo, TailwindLogo, TypeScriptLogo, JALogo, WPLogo, ShopifyLogo, AngularLogo, GALogo, GTMLogo, LaravelLogo, PHPLogo, XCodeLogo, OptimizeLogo, MagentoLogo, ZapierLogo, ProductiveLogo, FormikLogo, SQLAlchemyLogo, RestAPILogo, KotlinLogo, AndroidStudioLogo, PostgresLogo, GraphQLLogo, ApolloLogo, NodeLogo, ReduxLogo, JsonLogo } from '../svg';
 import '../components/styles/experienceSkills.css';
 
 interface ISkillSet {
@@ -8,6 +8,32 @@ interface ISkillSet {
 }
 
   const SkillSet: FC<ISkillSet> = ({company}) => {
+    const ascSkills = () => {
+      return (
+        <ul className={'grid grid-cols-2 w-full mx-auto mt-12 skills lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'}>
+          <li>{JavaScriptLogo()}</li>
+          <li>{HTMLLogo()}</li>
+          <li>{CSSLogo()}</li>
+          <li>{ReactLogo()}</li>
+          <li>{NodeLogo()}</li>
+          <li>{TailwindLogo()}</li>
+          <li>{GraphQLLogo()}</li>
+          <li>{ApolloLogo()}</li>
+          <li>{RestAPILogo()}</li>
+          <li>{TypeScriptLogo()}</li>
+          <li>{ReduxLogo()}</li>
+          <li>{PostgresLogo()}</li>
+          <li>{JsonLogo()}</li>
+          <li>{GitLogo()}</li>
+          <li>{GithubLogo()}</li>
+          <li>{AzureLogo()}</li>
+          <li>{KotlinLogo()}</li>
+          <li>{AndroidStudioLogo()}</li>
+          <li className={'mt-3'} style={{color: '#dc2626', fontWeight: '900', letterSpacing: '.5px', fontSize: '12px', textTransform: 'uppercase'}}><Link className={''} to='/'>{backArrowIcon()}</Link>Back</li>
+        </ul>
+      );
+    }
+
     const halSkills = () => {
       return (
         <ul className={'grid grid-cols-2 w-full mx-auto mt-12 skills lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'}>
@@ -137,6 +163,7 @@ interface ISkillSet {
     }
 
     const companySkill = (
+      company === 'AscendSC' ? ascSkills() :
       company === 'Halliburton' ? halSkills() :
       company === 'Gretrix' ? gxSkills() :
       company === 'Look Far Labs' ? lflSkills() :
