@@ -1,7 +1,6 @@
 import React from 'react';
 import '../components/styles/projects.css';
 import projects from '../data/projectData';
-import GulfCoastCorgis from '../images/GulfCoastCorgis.png';
 
 const Portfolio = () => {
 
