@@ -84,6 +84,22 @@
   height: 0;
 }
 
+.project-first > ul > li > div > ul > li.test {
+  position: relative;
+  right: 8rem;
+}
+
+.project-first > ul > li > div.project-image > a > img {
+  object-fit: fill;
+}
+
+.project-first > ul > li > div.project-content > h3.project-title {
+  width: 75%;
+  position: relative;
+  left: 5rem;
+  background-color: rgba(50, 50, 50, 0.35);
+}
+
 @media screen and (min-width: 575px) {
   .main-container {
     right: 10%;

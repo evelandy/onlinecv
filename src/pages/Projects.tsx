@@ -30,7 +30,7 @@ const Portfolio = () => {
                       {
                         projects[i].tech?.map((t, ii) => {
                           return (
-                            <li key={ii}>{t}</li>
+                            <li className='test' key={ii}>{t}</li>
                           )
                         })
                       }
