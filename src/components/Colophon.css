@@ -1,0 +1,8 @@
+.colophon { margin-top: 110px; border-top: 2px solid var(--ink); padding: 28px 0 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; color: var(--muted); font-size: 15px; }
+.colophon h4 { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--ink); margin: 0 0 8px; }
+.colophon p { margin: 0; }
+.end-mark { text-align: center; font-family: var(--display); font-size: 28px; color: var(--accent); padding-bottom: 40px; }
+
+@media (max-width: 900px) {
+  .colophon { grid-template-columns: 1fr; }
+}

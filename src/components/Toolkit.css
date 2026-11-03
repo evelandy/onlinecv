@@ -1,0 +1,21 @@
+.sheet { border: 1.5px solid var(--ink); background: var(--paper-2); }
+.sheet-top { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1.5px solid var(--ink); }
+.sheet-top div { padding: 12px 16px; border-right: 1px solid var(--rule); }
+.sheet-top div:last-child { border-right: 0; }
+.sheet-top .mono { color: var(--muted); display: block; font-size: 10.5px; }
+.sheet-top b { font-family: var(--mono); font-weight: 600; font-size: 15px; }
+.sheet-scroll { overflow-x: auto; }
+.sheet table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.sheet th, .sheet td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.sheet th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
+.sheet td.item { font-family: var(--mono); font-size: 13px; color: var(--accent); width: 70px; font-variant-numeric: tabular-nums; }
+.sheet td.cat { font-family: var(--display); font-weight: 700; font-size: 21px; width: 190px; }
+.sheet td.last { font-family: var(--mono); font-size: 13px; color: var(--muted); width: 170px; }
+.sheet tr:last-child td { border-bottom: 0; }
+.sheet tbody tr:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+
+@media (max-width: 900px) {
+  .sheet-top { grid-template-columns: 1fr 1fr; }
+  .sheet-top div:nth-child(2) { border-right: 0; }
+  .sheet-top div:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+}

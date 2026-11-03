@@ -1,8 +1,0 @@
-.appContainer:first-child .hamNavSticky,
-.appContainer:first-child .hamNavSticky:not(a) {
-    background: rgb(223, 59, 59, 0.9);
-}
-
-link {
-    opacity: 100%;
-}
