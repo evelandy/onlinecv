@@ -9,7 +9,7 @@ Everything on the site that is temporary. Each item is also marked with a `PLACE
 | 3 | Agent progress (40%) and target date (late Nov 2026) | `src/data/now.ts` → `agent.progress`, `agent.when` | Update as it moves; when it ships, change `state` to "Live" and add links (repo, demo). |
 | 4 | Gulf Coast Corgis v2: v1 screenshot and URL, domain TBD (gulfcoast-corgis.com or gulf-coast-corgis.com) | `src/data/projects.ts`, `src/data/now.ts` → `corgis` | Add a v2 screenshot, the final URL and the repo link; then move it out of "Now". |
 | 5 | Résumé PDF | `public/resume.pdf` (missing), `src/data/profile.ts` → `resumeUrl` | Add the PDF and set `resumeUrl: '/resume.pdf'`. Until then, the "Read the résumé" button scrolls to Experience. |
-| 6 | Contact form endpoint | `VITE_FORM_ENDPOINT` (see `.env.example`) | Create a free Formspree (or Web3Forms) form, then set the URL as a GitHub Actions variable. Until then, the form asks people to email directly. |
+| 6 | Contact form (temporary: Web3Forms → info@grdev-us.com) | `VITE_WEB3FORMS_KEY` (see `.env.example`) | Set the key as a GitHub Actions variable and in `.env.local`. Until it's set, the form asks people to email directly. Swap for a permanent service later if wanted. |
 | 7 | GrDev experience bullets are general | `src/data/experience.ts` | Replace with specific client work as it happens. |
 | 8 | Link-preview image (og:image) | `index.html` | Add a 1200×630 image, e.g. a screenshot of the title page, to `public/` and reference it. |
 | 9 | Copy review | `src/data/*` | Job bullets were tightened from the old site; check them for accuracy. "AscendSC = OCTG supply chain" and "eight years" are worth a second look. |

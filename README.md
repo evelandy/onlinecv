@@ -25,6 +25,6 @@ Design tokens (colors, fonts) are in `src/styles/tokens.css`.
 
 ## Deploying
 
-Pushing to `master` on GitHub deploys to GitHub Pages via `.github/workflows/deploy.yml`. The contact form needs `VITE_FORM_ENDPOINT` (see `.env.example`).
+Pushing to `master` on GitHub deploys to GitHub Pages via `.github/workflows/deploy.yml`. The contact form needs a Web3Forms key in `VITE_WEB3FORMS_KEY` (see `.env.example`).
 
 Unfinished items are tracked in [PLACEHOLDERS.md](PLACEHOLDERS.md).

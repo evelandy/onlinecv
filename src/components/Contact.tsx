@@ -3,8 +3,9 @@ import Chapter from './Chapter';
 import { profile } from '../data/profile';
 import './Contact.css';
 
-// PLACEHOLDER: set VITE_FORM_ENDPOINT (e.g. a Formspree form URL) to switch the form on (see PLACEHOLDERS.md)
-const endpoint = import.meta.env.VITE_FORM_ENDPOINT as string | undefined;
+// Web3Forms delivers submissions by email. The access key is public by design (it only allows sending to the inbox it was issued for).
+const endpoint = 'https://api.web3forms.com/submit';
+const accessKey = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
 
 type Status = 'idle' | 'sending' | 'sent' | 'error' | 'invalid';
 
@@ -28,7 +29,7 @@ const Contact = () => {
       setStatus('invalid');
       return;
     }
-    if (!endpoint) {
+    if (!accessKey) {
       setStatus('error');
       return;
     }
@@ -37,9 +38,15 @@ const Contact = () => {
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          access_key: accessKey,
+          subject: `New message from wrgcv.com${data.name ? ` (${data.name})` : ''}`,
+          from_name: 'wrgcv.com',
+        }),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.success) throw new Error(json.message ?? `HTTP ${res.status}`);
       form.reset();
       setStatus('sent');
     } catch {
@@ -55,16 +62,16 @@ const Contact = () => {
           <p className="open">Full-time, contract, part-time, or a single project. If it’s software, I’d like to hear about it.</p>
           <ul className="direct">
             <li><span className="mono">Email</span><a href={`mailto:${profile.email}`}>{profile.email}</a></li>
-            <li><span className="mono">LinkedIn</span><a href={links.linkedin.href}>{links.linkedin.label} ↗</a></li>
-            <li><span className="mono">GitHub</span><a href={links.github.href}>{links.github.label} ↗</a></li>
-            <li><span className="mono">Studio</span><a href={links.studio.href}>{links.studio.label} ↗</a></li>
+            <li><span className="mono">LinkedIn</span><a href={links.linkedin.href} target="_blank">{links.linkedin.label} ↗</a></li>
+            <li><span className="mono">GitHub</span><a href={links.github.href} target="_blank">{links.github.label} ↗</a></li>
+            <li><span className="mono">Studio</span><a href={links.studio.href} target="_blank">{links.studio.label} ↗</a></li>
           </ul>
         </div>
         <form onSubmit={submit} noValidate>
           <label htmlFor="f-name"><span className="mono">Your name</span><input id="f-name" name="name" autoComplete="name" /></label>
           <label htmlFor="f-email"><span className="mono">Email</span><input id="f-email" name="email" type="email" autoComplete="email" required /></label>
           <label htmlFor="f-msg"><span className="mono">Message</span><textarea id="f-msg" name="message" placeholder="A role, a project, or just hello." required /></label>
-          <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="honeypot" aria-hidden="true" />
+          <input type="text" name="botcheck" tabIndex={-1} autoComplete="off" className="honeypot" aria-hidden="true" />
           <div className="actions"><button className="btn solid" type="submit" disabled={status === 'sending'}>Send note</button></div>
           <p className="form-note" aria-live="polite">{messages[status]}</p>
         </form>
