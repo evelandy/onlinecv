@@ -16,6 +16,5 @@ export const profile = {
     github: { label: 'evelandy', href: 'https://github.com/evelandy' },
     studio: { label: 'grdev-us.com', href: 'https://www.grdev-us.com' },
   },
-  // PLACEHOLDER: set to '/resume.pdf' once I publish my updated resume at public/resume.pdf (see PLACEHOLDERS.md)
-  resumeUrl: null as string | null,
+  resumeUrl: '/resume.pdf' as string | null,
 };
