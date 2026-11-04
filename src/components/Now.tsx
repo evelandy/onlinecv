@@ -32,7 +32,7 @@ const Now = () => (
           <h3>{e.title}</h3>
           <p>{e.body}</p>
           {e.stack && <ul className="chips" aria-label="Stack">{e.stack.map((s) => <li key={s}>{s}</li>)}</ul>}
-          {e.link && <div className="links"><a href={e.link.href}>{e.link.label} ↗</a></div>}
+          {e.link && <div className="links"><a href={e.link.href} target="_blank" rel="noopener noreferrer">{e.link.label} ↗</a></div>}
         </article>
       ))}
     </div>
