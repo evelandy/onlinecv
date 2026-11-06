@@ -1,6 +1,6 @@
 import equipflow from '../assets/equipflow.jpg';
 import piperchat from '../assets/piperchat.jpg';
-import gulfcoastcorgis from '../assets/gulfcoastcorgis.jpg';
+import gulfcoastcorgis from '../assets/gulfcoastcorgis_v2.jpg';
 
 export interface Project {
   title: string;
@@ -31,11 +31,11 @@ const projects: Project[] = [
   {
     title: 'Gulf Coast Corgis',
     kicker: 'Breeder platform, v1 to v2',
-    body: 'A breeder management site first built on WordPress with custom PHP modules on a dedicated Linux server. Version two is a ground-up full-stack React rebuild, launching this month.',
+    body: 'A breeder management site first built on WordPress with custom PHP modules on a dedicated Linux server. Version two is a ground-up full-stack React rebuild, launched this month.',
     // PLACEHOLDER: Using v1 screenshot and URL until I complete and relaunch v2 final domain is stil TBD (see PLACEHOLDERS.md)
-    image: { src: gulfcoastcorgis, alt: 'Gulf Coast Corgis homepage, version one', caption: 'Gulf Coast Corgis, v1', note: 'v2 in progress' },
+    image: { src: gulfcoastcorgis, alt: 'Gulf Coast Corgis homepage, version two', caption: 'Gulf Coast Corgis, v2', note: 'REACT, Cloudflare, Github Pages' },
     spec: [['v1', 'WordPress, PHP, MySQL, Apache'], ['v2', 'React, full-stack']],
-    links: [{ label: 'v1 site', href: 'https://gulfcoastcorgis.com/' }],
+    links: [{ label: 'v2 Live site', href: 'https://gulfcoast-corgis.com/' }],
   },
 ];
 
