@@ -10,7 +10,7 @@ export const profile = {
     after: '.',
   },
   status: 'Open to full-time, contract & part-time work',
-  email: 'info@grdev-us.com',
+  email: 'william.griffin@wrgcv.com',
   links: {
     linkedin: { label: 'in/william-griffin', href: 'https://www.linkedin.com/in/william-griffin-4a4392b9/' },
     github: { label: 'evelandy', href: 'https://github.com/evelandy' },
