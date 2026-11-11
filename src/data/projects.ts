@@ -26,7 +26,7 @@ const projects: Project[] = [
     body: 'Real-time chat where messages sync peer to peer through Gun.js, with a REST API and PostgreSQL behind it for accounts.',
     image: { src: piperchat, alt: 'Piper Chat conversation view in dark mode', caption: 'Piper Chat', note: 'Nginx + SSL' },
     spec: [['Front', 'React'], ['Back', 'Node, Express, Gun.js, PostgreSQL'], ['Infra', 'AWS EC2, Nginx, SSL']],
-    links: [{ label: 'Live site', href: 'https://piper-chat.com/' }, { label: 'Source', href: 'https://github.com/evelandy/decentralized-p-2-p-chat-app' }],
+    links: [{ label: 'Live site', href: 'https://piperchat.wrgcv.com/' }, { label: 'Source', href: 'https://github.com/evelandy/decentralized-p-2-p-chat-app' }],
   },
   {
     title: 'Gulf Coast Corgis',
